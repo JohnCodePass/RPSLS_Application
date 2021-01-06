@@ -22,7 +22,6 @@ function playRounds(){
     document.getElementById('numRoundCont').style.display = 'flex';
     
     document.getElementById('numR1').addEventListener('click', function(){
-        console.log('You clicked one game')
         numOfRounds = 1;
         popGameArea();
     })
@@ -37,18 +36,122 @@ function popGameArea(){
         userAns = 'Rock';
         cpuGame(getCpu, userAns);
     })
+    document.getElementById('choi2').addEventListener('click', function(){
+        userAns = 'Paper';
+        cpuGame(getCpu, userAns);
+    })
+    document.getElementById('choi3').addEventListener('click', function(){
+        userAns = 'Scissors';
+        cpuGame(getCpu, userAns);
+    })
+    document.getElementById('choi4').addEventListener('click', function(){
+        userAns = 'Lizard';
+        cpuGame(getCpu, userAns);
+    })
+    document.getElementById('choi5').addEventListener('click', function(){
+        userAns = 'Spock';
+        cpuGame(getCpu, userAns);
+    })
 
     //cpuGame(getCpu);
 
 }
 
 function cpuGame(getCpu, userAns){
+    console.log(userAns);
+    console.log(getCpu);
     if(getCpu == userAns){
-        //alert('The game is a tie');
         document.getElementById('gameCont').style.display = 'none';
         document.getElementById('tieCont').style.display = 'flex';
     }
-    else{
-        alert('You lost');
+    else if(userAns == 'Rock'){
+        if(getCpu == 'Paper'){
+            document.getElementById('gameCont').style.display = 'none';
+            document.getElementById('cpuWinCont').style.display = 'flex';
+        }
+        else if(getCpu == 'Scissors'){
+            document.getElementById('gameCont').style.display = 'none';
+            document.getElementById('userWinCont').style.display = 'flex';
+        }
+        else if(getCpu == 'Lizard'){
+            document.getElementById('gameCont').style.display = 'none';
+            document.getElementById('userWinCont').style.display = 'flex';
+        }
+        else{
+            document.getElementById('gameCont').style.display = 'none';
+            document.getElementById('userWinCont').style.display = 'flex';
+        }
+    }
+    else if(userAns == 'Paper'){
+        if(getCpu == 'Rock'){
+            document.getElementById('gameCont').style.display = 'none';
+            document.getElementById('userWinCont').style.display = 'flex';
+        }
+        else if(getCpu == 'Scissors'){
+            document.getElementById('gameCont').style.display = 'none';
+            document.getElementById('cpuWinCont').style.display = 'flex';
+        }
+        else if(getCpu == 'Lizard'){
+            document.getElementById('gameCont').style.display = 'none';
+            document.getElementById('cpuWinCont').style.display = 'flex';
+        }
+        else{
+            document.getElementById('gameCont').style.display = 'none';
+            document.getElementById('userWinCont').style.display = 'flex';
+        }
+    }
+    else if(userAns == 'Scissors'){
+        if(getCpu == 'Rock'){
+            document.getElementById('gameCont').style.display = 'none';
+            document.getElementById('cpuWinCont').style.display = 'flex';
+        }
+        else if(getCpu == 'Paper'){
+            document.getElementById('gameCont').style.display = 'none';
+            document.getElementById('userWinCont').style.display = 'flex';
+        }
+        else if(getCpu == 'Lizard'){
+            document.getElementById('gameCont').style.display = 'none';
+            document.getElementById('userWinCont').style.display = 'flex';
+        }
+        else{
+            document.getElementById('gameCont').style.display = 'none';
+            document.getElementById('cpuWinCont').style.display = 'flex';
+        }
+    }
+    else if(userAns == 'Lizard'){
+        if(getCpu == 'Rock'){
+            document.getElementById('gameCont').style.display = 'none';
+            document.getElementById('cpuWinCont').style.display = 'flex';
+        }
+        else if(getCpu == 'Paper'){
+            document.getElementById('gameCont').style.display = 'none';
+            document.getElementById('userWinCont').style.display = 'flex';
+        }
+        else if(getCpu == 'Scissors'){
+            document.getElementById('gameCont').style.display = 'none';
+            document.getElementById('cpuWinCont').style.display = 'flex';
+        }
+        else{
+            document.getElementById('gameCont').style.display = 'none';
+            document.getElementById('userWinCont').style.display = 'flex';
+        }
+    }
+    else if(userAns == 'Spock'){
+        if(getCpu == 'Rock'){
+            document.getElementById('gameCont').style.display = 'none';
+            document.getElementById('userWinCont').style.display = 'flex';
+        }
+        else if(getCpu == 'Paper'){
+            document.getElementById('gameCont').style.display = 'none';
+            document.getElementById('cpuWinCont').style.display = 'flex';
+        }
+        else if(getCpu == 'Scissors'){
+            document.getElementById('gameCont').style.display = 'none';
+            document.getElementById('userWinCont').style.display = 'flex';
+        }
+        else{
+            document.getElementById('gameCont').style.display = 'none';
+            document.getElementById('cpuWinCont').style.display = 'flex';
+        }
     }
 }

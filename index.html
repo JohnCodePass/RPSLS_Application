@@ -62,11 +62,20 @@ Must be designed & on GitHub.
         <div class="row d-flex align-items-center flex-column">
             <h2>Choose a weapon</h2>
             <div class="col-12 d-flex justify-content-center align-items-center pt-3">
-                <button class="btn btn-danger mx-3 btnChoose">Rock</button>
-                <button class="btn btn-danger mx-3 btnChoose">Paper</button>
-                <button class="btn btn-danger mx-3 btnChoose">Scissors</button>
-                <button class="btn btn-danger mx-3 btnChoose">Lizard</button>
-                <button class="btn btn-danger mx-3 btnChoose">Spock</button>
+                <button id="choi1" class="btn btn-danger mx-3 btnChoose">Rock</button>
+                <button id="choi2" class="btn btn-danger mx-3 btnChoose">Paper</button>
+                <button id="choi3" class="btn btn-danger mx-3 btnChoose">Scissors</button>
+                <button id="choi4" class="btn btn-danger mx-3 btnChoose">Lizard</button>
+                <button id="choi5" class="btn btn-danger mx-3 btnChoose">Spock</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="tieCont" class="container">
+        <div class="row d-flex align-items-center flex-column">
+            <p id="tieDis">The Game is a tie!!</p>
+            <div class="col-12 d-flex justify-content-center align-items-center pt-3">
+                <button onClick="window.location.reload()" class="btn btn-success btnChoose">Play Again?</button>
             </div>
         </div>
     </div>

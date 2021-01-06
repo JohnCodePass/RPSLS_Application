@@ -1,7 +1,9 @@
 let url = 'https://csa2020studentapi.azurewebsites.net/rpsls';
 let getCpu = '';
 let userAns = '';
-let numOfRounds = 0;
+let numToWin = 0;
+let userWins = 0;
+let cpuWins = 0;
 
 document.getElementById('cpuBtn').addEventListener('click', function () {
     fetch(url)
@@ -22,7 +24,16 @@ function playRounds(){
     document.getElementById('numRoundCont').style.display = 'flex';
     
     document.getElementById('numR1').addEventListener('click', function(){
-        numOfRounds = 1;
+        popGameArea();
+    })
+
+    document.getElementById('numR2').addEventListener('click', function(){
+        numToWin = 3;
+        popGameArea();
+    })
+
+    document.getElementById('numR3').addEventListener('click', function(){
+        numToWin = 4;
         popGameArea();
     })
 }
@@ -52,9 +63,6 @@ function popGameArea(){
         userAns = 'Spock';
         cpuGame(getCpu, userAns);
     })
-
-    //cpuGame(getCpu);
-
 }
 
 function cpuGame(getCpu, userAns){

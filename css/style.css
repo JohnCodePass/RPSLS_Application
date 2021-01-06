@@ -18,4 +18,27 @@ body{
 
 .themainBtn{
     font-size: 30px;
+    color: black;
+    text-shadow: 1px 1px white;
+    box-shadow: 3px 3px #00000085;
+}
+#numRoundCont{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+#gameCont{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+.btnChoose{
+    font-size: 30px;
+    color: black;
+    text-shadow: 1px 1px white;
+    box-shadow: 3px 3px #00000085;
 }

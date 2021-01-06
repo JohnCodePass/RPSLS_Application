@@ -1,5 +1,20 @@
 <!doctype html>
 <html lang="en">
+<!-- 
+You are to make Rock, Paper, Scissors, Lizard, Spock game. 
+
+This application needs to be able to run for both vs the cpu or another person. 
+
+On CPU mode - use the following API call: https://csa2020studentapi.azurewebsites.net/rpsls
+
+Be able to select different modes: 1 win / 3 out of 5 / 4 out of 7
+
+Be creative in how you make the 2 player mode work. 
+
+This needs to be a Single Page Application for Desktop.
+
+Must be designed & on GitHub. 
+-->
 
 <head>
     <!-- Required meta tags -->
@@ -15,8 +30,8 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row d-flex  flex-column">
+    <div id="topCont" class="container">
+        <div class="row d-flex flex-column">
             <div class="col-12 d-flex justify-content-center">
                 <p id="mainHead">Welcome to RPSLS</p>
             </div>
@@ -25,8 +40,33 @@
                     <button class="btn btn-danger themainBtn">PvP</button>
                 </div>
                 <div class="col-6 d-flex justify-content-center">
-                    <button class="btn btn-success themainBtn">PvC</button>
+                    <button id="cpuBtn" class="btn btn-danger themainBtn">PvC</button>
                 </div>
+            </div>
+        </div>
+        <!-- <h1 id="cpuAns">eqweqw</h1> -->
+    </div>
+
+    <div id="numRoundCont" class="container">
+        <div class="row d-flex align-items-center flex-column">
+            <h2>Choose number of rounds</h2>
+            <div class="col-12 d-flex justify-content-center align-items-center pt-3">
+                <button id="numR1" class="btn btn-danger mx-3 btnChoose">1 Win</button>
+                <button id="numR2" class="btn btn-danger mx-3 btnChoose">3 of 5</button>
+                <button id="numR3" class="btn btn-danger mx-3 btnChoose">4 of 7</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="gameCont" class="container">
+        <div class="row d-flex align-items-center flex-column">
+            <h2>Choose a weapon</h2>
+            <div class="col-12 d-flex justify-content-center align-items-center pt-3">
+                <button class="btn btn-danger mx-3 btnChoose">Rock</button>
+                <button class="btn btn-danger mx-3 btnChoose">Paper</button>
+                <button class="btn btn-danger mx-3 btnChoose">Scissors</button>
+                <button class="btn btn-danger mx-3 btnChoose">Lizard</button>
+                <button class="btn btn-danger mx-3 btnChoose">Spock</button>
             </div>
         </div>
     </div>

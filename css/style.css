@@ -1,0 +1,21 @@
+body{
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(90,92,106,1) 0%, rgba(32,45,58,1) 81.3% );
+    color: white;
+    text-shadow: 3px 4px #000000;
+}
+
+/* center the container */
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mainHead{
+    font-size: 64px;
+}
+
+.themainBtn{
+    font-size: 30px;
+}

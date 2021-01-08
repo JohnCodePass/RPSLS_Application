@@ -113,18 +113,19 @@ function pvpGame(oppAns, userAns) {
     }
 }
 
-/************************************************* CPU *******************************/
+/************************************************* CPU *************************************************/
 
 
-// function redoFetch(){
-//     fetch(url)
-//         .then((response) => {
-//             return response.text();
-//         })
-//         .then((choice) => {
-//             getCpu = choice;
-//         });
-// }
+function redoFetch(){
+    fetch(url)
+        .then((response) => {
+            return response.text();
+        })
+        .then((choice) => {
+            getCpu = choice;
+            console.log('redoFetch ' + getCpu);
+        });
+}
 
 document.getElementById('cpuBtn').addEventListener('click', function () {
     fetch(url)
@@ -134,6 +135,7 @@ document.getElementById('cpuBtn').addEventListener('click', function () {
         .then((choice) => {
             getCpu = choice;
             //document.getElementById('cpuAns').innerText = err;
+            console.log('first fetch ' + getCpu);
             playRounds();
             // popGameArea();
             //cpuGame(err);
@@ -150,7 +152,10 @@ function playRounds() {
 
     document.getElementById('numR2').addEventListener('click', function () {
         numToWin = 3;
-        popGameArea();
+        // while(userWins != 3 || cpuWins != 3){
+        //     popGameArea();
+        //     redoFetch()
+        // }
     })
 
     document.getElementById('numR3').addEventListener('click', function () {

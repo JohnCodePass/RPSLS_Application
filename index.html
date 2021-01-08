@@ -26,7 +26,7 @@ Must be designed & on GitHub.
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Hello, world!</title>
+    <title>RPSLS</title>
 </head>
 
 <body>
@@ -37,7 +37,7 @@ Must be designed & on GitHub.
             </div>
             <div class="row d-flex justify-content-center pt-3">
                 <div class="col-6 d-flex justify-content-center">
-                    <button class="btn btn-danger themainBtn">PvP</button>
+                    <button id="pvpBtn" class="btn btn-danger themainBtn">PvP</button>
                 </div>
                 <div class="col-6 d-flex justify-content-center">
                     <button id="cpuBtn" class="btn btn-danger themainBtn">PvC</button>
@@ -60,6 +60,7 @@ Must be designed & on GitHub.
 
     <div id="gameCont" class="container">
         <div class="row d-flex align-items-center flex-column">
+            <h2 id="playerTurnName"></h2>
             <h2>Choose a weapon</h2>
             <div class="col-12 d-flex justify-content-center align-items-center pt-3">
                 <button id="choi1" class="btn btn-danger mx-3 btnChoose">Rock</button>
@@ -75,7 +76,7 @@ Must be designed & on GitHub.
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-12 d-flex justify-content-center align-items-center">
                 <h2 id="userChoice"></h2>
-                <h2>..vs..</h2>
+                <h2 class="mx-3">vs</h2>
                 <h1></h1>
                 <h2 id="cpuChoice"></h2>
             </div>

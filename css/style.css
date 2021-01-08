@@ -42,13 +42,16 @@ body{
     text-shadow: 1px 1px white;
     box-shadow: 3px 3px #00000085;
 }
-#tieCont{
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    display: none;
+
+.btnChoose:focus {
+    font-size: 30px;
+    color: black;
+    text-shadow: 1px 1px white;
+    box-shadow: 3px 3px #00000085;
+    background-color: rgb(221, 53, 73);
+    outline: none;
 }
+
 #tieDis{
     font-size: 75px;
     color: red;

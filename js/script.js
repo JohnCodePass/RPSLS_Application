@@ -76,26 +76,27 @@ function popGameArea() {
 }
 
 function cpuGame(getCpu, userAns) {
-    console.log('user '+userAns);
-    console.log('cpu '+getCpu);
     if (getCpu == userAns) {
         document.getElementById('gameCont').style.display = 'none';
-        document.getElementById('tieCont').style.display = 'flex';
+        document.getElementById('userWinCont').style.display = 'flex';
+        document.getElementById('userChoice').innerText = userAns;
+        document.getElementById('cpuChoice').innerText = getCpu;
+        document.getElementById('tieDis').innerText = 'Tie'
     }
     else if (userAns == 'Rock') {
-        (getCpu == 'Paper' || getCpu == 'Spock') ? (document.getElementById('gameCont').style.display = 'none', document.getElementById('cpuWinCont').style.display = 'flex') : (document.getElementById('gameCont').style.display = 'none',document.getElementById('userWinCont').style.display = 'flex');
+        (getCpu == 'Paper' || getCpu == 'Spock') ? (document.getElementById('gameCont').style.display = 'none',document.getElementById('userWinCont').style.display = 'flex',document.getElementById('tieDis').innerText = 'CPU Wins', document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns ) : (document.getElementById('gameCont').style.display = 'none',document.getElementById('userWinCont').style.display = 'flex',document.getElementById('tieDis').innerText = 'User Wins',document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns);
     }
     else if (userAns == 'Paper') {
-        (getCpu == 'Scissors' ||  getCpu == 'Lizard') ? (document.getElementById('gameCont').style.display = 'none', document.getElementById('cpuWinCont').style.display = 'flex') : (document.getElementById('gameCont').style.display = 'none',document.getElementById('userWinCont').style.display = 'flex');
+        (getCpu == 'Scissors' ||  getCpu == 'Lizard') ? (document.getElementById('gameCont').style.display = 'none',document.getElementById('userWinCont').style.display = 'flex',document.getElementById('tieDis').innerText = 'CPU Wins', document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns ) : (document.getElementById('gameCont').style.display = 'none',document.getElementById('userWinCont').style.display = 'flex',document.getElementById('tieDis').innerText = 'User Wins',document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns);
     }
     else if (userAns == 'Scissors') {
-        (getCpu == 'Rock' ||  getCpu == 'Spock') ? (document.getElementById('gameCont').style.display = 'none', document.getElementById('cpuWinCont').style.display = 'flex') : (document.getElementById('gameCont').style.display = 'none',document.getElementById('userWinCont').style.display = 'flex');
+        (getCpu == 'Rock' ||  getCpu == 'Spock') ? (document.getElementById('gameCont').style.display = 'none',document.getElementById('userWinCont').style.display = 'flex',document.getElementById('tieDis').innerText = 'CPU Wins', document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns ) : (document.getElementById('gameCont').style.display = 'none',document.getElementById('userWinCont').style.display = 'flex',document.getElementById('tieDis').innerText = 'User Wins',document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns);
     }
     else if (userAns == 'Lizard') {
-        (getCpu == 'Rock' ||  getCpu == 'Scissors') ? (document.getElementById('gameCont').style.display = 'none', document.getElementById('cpuWinCont').style.display = 'flex') : (document.getElementById('gameCont').style.display = 'none',document.getElementById('userWinCont').style.display = 'flex');
+        (getCpu == 'Rock' ||  getCpu == 'Scissors') ? (document.getElementById('gameCont').style.display = 'none',document.getElementById('userWinCont').style.display = 'flex',document.getElementById('tieDis').innerText = 'CPU Wins', document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns ) : (document.getElementById('gameCont').style.display = 'none',document.getElementById('userWinCont').style.display = 'flex',document.getElementById('tieDis').innerText = 'User Wins',document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns);
     }
     else if (userAns == 'Spock') {
-        (getCpu == 'Paper' ||  getCpu == 'Lizard') ? (document.getElementById('gameCont').style.display = 'none', document.getElementById('cpuWinCont').style.display = 'flex') : (document.getElementById('gameCont').style.display = 'none',document.getElementById('userWinCont').style.display = 'flex');
+        (getCpu == 'Paper' ||  getCpu == 'Lizard') ? (document.getElementById('gameCont').style.display = 'none',document.getElementById('userWinCont').style.display = 'flex',document.getElementById('tieDis').innerText = 'CPU Wins', document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns ) : (document.getElementById('gameCont').style.display = 'none',document.getElementById('userWinCont').style.display = 'flex',document.getElementById('tieDis').innerText = 'User Wins',document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns);
     }
 }
 // OLD FUNCTION

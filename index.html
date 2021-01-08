@@ -71,27 +71,16 @@ Must be designed & on GitHub.
         </div>
     </div>
 
-    <div id="userWinCont" class="container">
-        <div class="row d-flex align-items-center flex-column">
-            <p class="tieDis">User Wins!!</p>
-            <div class="col-12 d-flex justify-content-center align-items-center pt-3">
-                <button onClick="window.location.reload()" class="btn btn-success btnChoose">Play Again?</button>
+    <div id="userWinCont" class="container d-flex flex-column">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <h2 id="userChoice"></h2>
+                <h2>..vs..</h2>
+                <h2 id="cpuChoice"></h2>
             </div>
         </div>
-    </div>
-
-    <div id="tieCont" class="container">
         <div class="row d-flex align-items-center flex-column">
-            <p class="tieDis">The Game is a tie!!</p>
-            <div class="col-12 d-flex justify-content-center align-items-center pt-3">
-                <button onClick="window.location.reload()" class="btn btn-success btnChoose">Play Again?</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="cpuWinCont" class="container">
-        <div class="row d-flex align-items-center flex-column">
-            <p class="tieDis">CPU Wins!!</p>
+            <p id="tieDis"></p>
             <div class="col-12 d-flex justify-content-center align-items-center pt-3">
                 <button onClick="window.location.reload()" class="btn btn-success btnChoose">Play Again?</button>
             </div>

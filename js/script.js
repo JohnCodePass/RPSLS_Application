@@ -125,7 +125,6 @@ function pvpGame(oppAns, userAns) {
             : (document.getElementById('gameCont').style.display = 'none', document.getElementById('userWinCont').style.display = 'flex', document.getElementById('tieDis').innerText = 'Player 1 Wins', document.getElementById('cpuChoice').innerText = oppAns, document.getElementById('userChoice').innerText = userAns);
     }
 }
-/**************************************************************************************************/
 
 function pvp3GameArea(userAns) {
     document.getElementById('userWinCont').style.display = 'none';
@@ -134,14 +133,12 @@ function pvp3GameArea(userAns) {
     document.getElementById('gameCont').style.display = 'flex';
 
     if (p1Wins >= 3) {
-        console.log('Player 1 has won');
         document.getElementById('gameCont').style.display = 'none';
         document.getElementById('userWinCont').style.display = 'flex';
         document.getElementById('playAgainBtn').style.display = 'flex';
         document.getElementById('nextRoundBtn').style.display = 'none';
     }
     else if (p2Wins >= 3) {
-        console.log('Player 2 has won');
         document.getElementById('gameCont').style.display = 'none';
         document.getElementById('userWinCont').style.display = 'flex';
         document.getElementById('playAgainBtn').style.display = 'flex';
@@ -248,8 +245,6 @@ function pvp3Game(oppAns, userAns) {
     }
 }
 
-// *************************************************************************************************
-
 function pvp7GameArea(userAns) {
     document.getElementById('userWinCont').style.display = 'none';
     document.getElementById('numRoundCont').style.display = 'none';
@@ -257,14 +252,12 @@ function pvp7GameArea(userAns) {
     document.getElementById('gameCont').style.display = 'flex';
 
     if (p1Wins >= 4) {
-        console.log('Player 1 has won');
         document.getElementById('gameCont').style.display = 'none';
         document.getElementById('userWinCont').style.display = 'flex';
         document.getElementById('playAgainBtn').style.display = 'flex';
         document.getElementById('nextRoundBtn').style.display = 'none';
     }
     else if (p2Wins >= 4) {
-        console.log('Player 2 has won');
         document.getElementById('gameCont').style.display = 'none';
         document.getElementById('userWinCont').style.display = 'flex';
         document.getElementById('playAgainBtn').style.display = 'flex';
@@ -371,10 +364,6 @@ function pvp7Game(oppAns, userAns) {
     }
 }
 
-
-/************************************************* CPU *************************************************/
-
-
 function redoFetch() {
     fetch(url)
         .then((response) => {
@@ -474,20 +463,18 @@ function cpuGame(getCpu, userAns) {
             : (document.getElementById('gameCont').style.display = 'none', document.getElementById('userWinCont').style.display = 'flex', document.getElementById('tieDis').innerText = 'User Wins', document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns);
     }
 }
-//************************************************************************************* */
+
 let counter = 0;
 function pvc3GameArea() {
     document.getElementById('userWinCont').style.display = 'none';
     userAns = '';
     if (userWins >= 3) {
-        console.log('The user has won');
         document.getElementById('gameCont').style.display = 'none';
         document.getElementById('userWinCont').style.display = 'flex';
         document.getElementById('playAgainBtn').style.display = 'flex';
         document.getElementById('nextRoundBtn').style.display = 'none';
     }
     else if (cpuWins >= 3) {
-        console.log('The computer has won');
         document.getElementById('gameCont').style.display = 'none';
         document.getElementById('userWinCont').style.display = 'flex';
         document.getElementById('playAgainBtn').style.display = 'flex';
@@ -577,19 +564,16 @@ function cpuR3Game(getCpu, userAns) {
     }
 }
 
-//************************************************************************************* */
 function pvc7GameArea() {
     document.getElementById('userWinCont').style.display = 'none';
     userAns = '';
     if (userWins >= 4) {
-        console.log('The user has won');
         document.getElementById('gameCont').style.display = 'none';
         document.getElementById('userWinCont').style.display = 'flex';
         document.getElementById('playAgainBtn').style.display = 'flex';
         document.getElementById('nextRoundBtn').style.display = 'none';
     }
     else if (cpuWins >= 4) {
-        console.log('The computer has won');
         document.getElementById('gameCont').style.display = 'none';
         document.getElementById('userWinCont').style.display = 'flex';
         document.getElementById('playAgainBtn').style.display = 'flex';
@@ -678,4 +662,3 @@ function cpuR4Game(getCpu, userAns) {
         pvc7GameArea();
     }
 }
-//************************************************************************************* */

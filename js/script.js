@@ -158,13 +158,11 @@ function playRounds() {
     })
 
     document.getElementById('numR2').addEventListener('click', function () {
-        numToWin = 3;
         pvc3GameArea();
     })
 
     document.getElementById('numR3').addEventListener('click', function () {
-        numToWin = 4;
-        //popGameArea();
+        pvc7GameArea();
     })
 }
 
@@ -192,7 +190,7 @@ function popGameArea() {
     })
     document.getElementById('choi5').addEventListener('click', function () {
         userAns = 'Spock';
-        cpuGame(getCpu, userAns);
+        pvc4GameArea(getCpu, userAns);
     })
 }
 
@@ -230,22 +228,25 @@ function cpuGame(getCpu, userAns) {
             : (document.getElementById('gameCont').style.display = 'none', document.getElementById('userWinCont').style.display = 'flex', document.getElementById('tieDis').innerText = 'User Wins', document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns);
     }
 }
-
-// eqwejwiqjeqowijeoiqwjeoiqjwioejwqoijeqiowjeioqwjeijqwioejqwioejoiqwjeoiqwjeo
-let clicked3Op = false;
+//************************************************************************************* */
+let counter = 0;
 function pvc3GameArea() {
     document.getElementById('userWinCont').style.display = 'none';
+    userAns = '';
     console.log('in 3 round pop game');
     console.log(userWins);
     console.log(cpuWins);
-    userAns = '';
     if (userWins >= 3) {
-        alert('The user has won');
+        console.log('The user has won');
+        document.getElementById('gameCont').style.display = 'none';
+        document.getElementById('userWinCont').style.display = 'flex';
         document.getElementById('playAgainBtn').style.display = 'flex';
         document.getElementById('nextRoundBtn').style.display = 'none';
     }
     else if (cpuWins >= 3) {
-        alert('The computer has won');
+        console.log('The computer has won');
+        document.getElementById('gameCont').style.display = 'none';
+        document.getElementById('userWinCont').style.display = 'flex';
         document.getElementById('playAgainBtn').style.display = 'flex';
         document.getElementById('nextRoundBtn').style.display = 'none';
     }
@@ -276,6 +277,8 @@ function pvc3GameArea() {
 }
 
 function cpuR3Game(getCpu, userAns) {
+    counter++;
+    console.log('times in r3Game ' + counter);
     console.log('this is now connected')
     document.getElementById('gameCont').style.display = 'none';
     if (userWins != 3 || cpuWins != 3) {
@@ -293,26 +296,36 @@ function cpuR3Game(getCpu, userAns) {
             (getCpu == 'Paper' || getCpu == 'Spock')
                 ? (document.getElementById('gameCont').style.display = 'none', document.getElementById('userWinCont').style.display = 'flex', document.getElementById('tieDis').innerText = 'CPU Wins', document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns, cpuWins++)
                 : (document.getElementById('gameCont').style.display = 'none', document.getElementById('userWinCont').style.display = 'flex', document.getElementById('tieDis').innerText = 'User Wins', document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns, userWins++);
+            getCpu = '';
+            userAns = '';
         }
         else if (userAns == 'Paper') {
             (getCpu == 'Scissors' || getCpu == 'Lizard')
                 ? (document.getElementById('gameCont').style.display = 'none', document.getElementById('userWinCont').style.display = 'flex', document.getElementById('tieDis').innerText = 'CPU Wins', document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns, cpuWins++)
                 : (document.getElementById('gameCont').style.display = 'none', document.getElementById('userWinCont').style.display = 'flex', document.getElementById('tieDis').innerText = 'User Wins', document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns, userWins++);
+            getCpu = '';
+            userAns = '';
         }
         else if (userAns == 'Scissors') {
             (getCpu == 'Rock' || getCpu == 'Spock')
                 ? (document.getElementById('gameCont').style.display = 'none', document.getElementById('userWinCont').style.display = 'flex', document.getElementById('tieDis').innerText = 'CPU Wins', document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns, cpuWins++)
                 : (document.getElementById('gameCont').style.display = 'none', document.getElementById('userWinCont').style.display = 'flex', document.getElementById('tieDis').innerText = 'User Wins', document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns, userWins++);
+            getCpu = '';
+            userAns = '';
         }
         else if (userAns == 'Lizard') {
             (getCpu == 'Rock' || getCpu == 'Scissors')
                 ? (document.getElementById('gameCont').style.display = 'none', document.getElementById('userWinCont').style.display = 'flex', document.getElementById('tieDis').innerText = 'CPU Wins', document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns, cpuWins++)
                 : (document.getElementById('gameCont').style.display = 'none', document.getElementById('userWinCont').style.display = 'flex', document.getElementById('tieDis').innerText = 'User Wins', document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns, userWins++);
+            getCpu = '';
+            userAns = '';
         }
         else if (userAns == 'Spock') {
             (getCpu == 'Paper' || getCpu == 'Lizard')
                 ? (document.getElementById('gameCont').style.display = 'none', document.getElementById('userWinCont').style.display = 'flex', document.getElementById('tieDis').innerText = 'CPU Wins', document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns, cpuWins++)
                 : (document.getElementById('gameCont').style.display = 'none', document.getElementById('userWinCont').style.display = 'flex', document.getElementById('tieDis').innerText = 'User Wins', document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns, userWins++);
+            getCpu = '';
+            userAns = '';
         }
         document.getElementById('nextRoundBtn').addEventListener('click', function () {
             redoFetch();
@@ -323,4 +336,112 @@ function cpuR3Game(getCpu, userAns) {
         pvc3GameArea();
     }
 }
-// wqjmekoqwjneikjwqheioqwhjioedjqwopejwqioioioipopopuioyughjgjh this is for the 3 round
+
+//************************************************************************************* */
+function pvc7GameArea() {
+    document.getElementById('userWinCont').style.display = 'none';
+    userAns = '';
+    console.log('in 3 round pop game');
+    console.log(userWins);
+    console.log(cpuWins);
+    if (userWins >= 4) {
+        console.log('The user has won');
+        document.getElementById('gameCont').style.display = 'none';
+        document.getElementById('userWinCont').style.display = 'flex';
+        document.getElementById('playAgainBtn').style.display = 'flex';
+        document.getElementById('nextRoundBtn').style.display = 'none';
+    }
+    else if (cpuWins >= 4) {
+        console.log('The computer has won');
+        document.getElementById('gameCont').style.display = 'none';
+        document.getElementById('userWinCont').style.display = 'flex';
+        document.getElementById('playAgainBtn').style.display = 'flex';
+        document.getElementById('nextRoundBtn').style.display = 'none';
+    }
+    document.getElementById('numRoundCont').style.display = 'none';
+    document.getElementById('topCont').style.display = 'none';
+    document.getElementById('gameCont').style.display = 'flex';
+
+    document.getElementById('choi1').addEventListener('click', function () {
+        userAns = 'Rock';
+        cpuR4Game(getCpu, userAns);
+    })
+    document.getElementById('choi2').addEventListener('click', function () {
+        userAns = 'Paper';
+        cpuR4Game(getCpu, userAns);
+    })
+    document.getElementById('choi3').addEventListener('click', function () {
+        userAns = 'Scissors';
+        cpuR4Game(getCpu, userAns);
+    })
+    document.getElementById('choi4').addEventListener('click', function () {
+        userAns = 'Lizard';
+        cpuR4Game(getCpu, userAns);
+    })
+    document.getElementById('choi5').addEventListener('click', function () {
+        userAns = 'Spock';
+        cpuR4Game(getCpu, userAns);
+    })
+}
+
+function cpuR4Game(getCpu, userAns) {
+    counter++;
+    console.log('times in r3Game ' + counter);
+    console.log('this is now connected')
+    document.getElementById('gameCont').style.display = 'none';
+    if (userWins != 4 || cpuWins != 4) {
+        document.getElementById('gameCont').style.display = 'none';
+        document.getElementById('nextRoundBtn').style.display = 'flex';
+        document.getElementById('playAgainBtn').style.display = 'none';
+        if (getCpu == userAns) {
+            document.getElementById('gameCont').style.display = 'none';
+            document.getElementById('userWinCont').style.display = 'flex';
+            document.getElementById('userChoice').innerText = userAns;
+            document.getElementById('cpuChoice').innerText = getCpu;
+            document.getElementById('tieDis').innerText = 'Tie';
+        }
+        else if (userAns == 'Rock') {
+            (getCpu == 'Paper' || getCpu == 'Spock')
+                ? (document.getElementById('gameCont').style.display = 'none', document.getElementById('userWinCont').style.display = 'flex', document.getElementById('tieDis').innerText = 'CPU Wins', document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns, cpuWins++)
+                : (document.getElementById('gameCont').style.display = 'none', document.getElementById('userWinCont').style.display = 'flex', document.getElementById('tieDis').innerText = 'User Wins', document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns, userWins++);
+            getCpu = '';
+            userAns = '';
+        }
+        else if (userAns == 'Paper') {
+            (getCpu == 'Scissors' || getCpu == 'Lizard')
+                ? (document.getElementById('gameCont').style.display = 'none', document.getElementById('userWinCont').style.display = 'flex', document.getElementById('tieDis').innerText = 'CPU Wins', document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns, cpuWins++)
+                : (document.getElementById('gameCont').style.display = 'none', document.getElementById('userWinCont').style.display = 'flex', document.getElementById('tieDis').innerText = 'User Wins', document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns, userWins++);
+            getCpu = '';
+            userAns = '';
+        }
+        else if (userAns == 'Scissors') {
+            (getCpu == 'Rock' || getCpu == 'Spock')
+                ? (document.getElementById('gameCont').style.display = 'none', document.getElementById('userWinCont').style.display = 'flex', document.getElementById('tieDis').innerText = 'CPU Wins', document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns, cpuWins++)
+                : (document.getElementById('gameCont').style.display = 'none', document.getElementById('userWinCont').style.display = 'flex', document.getElementById('tieDis').innerText = 'User Wins', document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns, userWins++);
+            getCpu = '';
+            userAns = '';
+        }
+        else if (userAns == 'Lizard') {
+            (getCpu == 'Rock' || getCpu == 'Scissors')
+                ? (document.getElementById('gameCont').style.display = 'none', document.getElementById('userWinCont').style.display = 'flex', document.getElementById('tieDis').innerText = 'CPU Wins', document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns, cpuWins++)
+                : (document.getElementById('gameCont').style.display = 'none', document.getElementById('userWinCont').style.display = 'flex', document.getElementById('tieDis').innerText = 'User Wins', document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns, userWins++);
+            getCpu = '';
+            userAns = '';
+        }
+        else if (userAns == 'Spock') {
+            (getCpu == 'Paper' || getCpu == 'Lizard')
+                ? (document.getElementById('gameCont').style.display = 'none', document.getElementById('userWinCont').style.display = 'flex', document.getElementById('tieDis').innerText = 'CPU Wins', document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns, cpuWins++)
+                : (document.getElementById('gameCont').style.display = 'none', document.getElementById('userWinCont').style.display = 'flex', document.getElementById('tieDis').innerText = 'User Wins', document.getElementById('cpuChoice').innerText = getCpu, document.getElementById('userChoice').innerText = userAns, userWins++);
+            getCpu = '';
+            userAns = '';
+        }
+        document.getElementById('nextRoundBtn').addEventListener('click', function () {
+            redoFetch();
+            pvc7GameArea();
+        })
+    }
+    else{
+        pvc7GameArea();
+    }
+}
+//************************************************************************************* */
